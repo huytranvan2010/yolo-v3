@@ -2,8 +2,14 @@
 Yolo v3 is an algorithm that uses deep convolutional neural networks to detect objects. <br> <br>
 
 ## Getting started
-**Nên tạo riêng một enviroment mới để **chạy cái này python 3.6** (lúc đàu chạy opencv 3.9 và 3.7 đều báo lỗi), sau đó `pip install -r requirements.txt`
-
+Nên tạo riêng một enviroment mới để **chạy cái này python 3.6** (lúc đàu chạy opencv 3.9 và 3.7 đều báo lỗi)
+```python
+conda create -n myenv python=3.6
+``` 
+sau đó thực hiện ở trong environment đó
+```python
+pip install -r requirements.txt`
+```
 `yolo_v3.py` chứa implementation YOLOv3 by Tensorflow. 'load_weights.py` chứa thông tin về weights, nếu mình có custom thì sửa đổi một chút trong này. 
 
 ### Prerequisites
