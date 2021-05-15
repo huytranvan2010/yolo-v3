@@ -2,6 +2,9 @@
 Yolo v3 is an algorithm that uses deep convolutional neural networks to detect objects. <br> <br>
 
 ## Getting started
+**Nên tạo riêng một enviroment mới để **chạy cái này python 3.6** (lúc đàu chạy opencv 3.9 và 3.7 đều báo lỗi), sau đó `pip install -r requirements.txt`
+
+`yolo_v3.py` chứa implementation YOLOv3 by Tensorflow. 'load_weights.py` chứa thông tin về weights, nếu mình có custom thì sửa đổi một chút trong này. 
 
 ### Prerequisites
 This project is written in Python 3.7 using Tensorflow 2.0 (deep learning), NumPy (numerical computing), Pillow (image processing), OpenCV (computer vision) and seaborn (visualization) packages.
@@ -22,7 +25,7 @@ You can download the yolov3 weights by clicking [here](https://pjreddie.com/medi
 ### Using Custom trained weights
 <strong> Learn How To Train Custom YOLOV3 Weights Here: https://www.youtube.com/watch?v=zJDUhGL26iU </strong>
 
-Add your custom weights file to weights folder and your custom .names file into data/labels folder.
+**Add your custom weights file to weights folder and your custom .names file into data/labels folder.**
 
 Change 'n_classes=80' on line 97 of load_weights.py to 'n_classes=<number of classes in .names file>'.
 
@@ -30,13 +33,13 @@ Change './weights/yolov3.weights' on line 107 of load_weights.py to './weights/<
 
 Change './data/labels/coco.names' on line 25 of detection.py to './data/labels/<custom names files>'.
   
-### Save the weights in Tensorflow format
+### Save the weights in Tensorflow format (ok thì bắt đầu chạy)
 Load the weights using `load_weights.py` script. This will convert the yolov3 weights into TensorFlow .ckpt model files!
 
 ```
 python load_weights.py
 ```
-
+**Chạy xong cái này sẽ có một số file được tạo ra trong thư mục `weights`.
 ## Running the model
 You can run the model using `detect.py` script. The script works on images, video or your webcam. Don't forget to set the IoU (Intersection over Union) and confidence thresholds.
 ### Usage
@@ -64,6 +67,9 @@ You can also run the script with video files.
 ```
 python detect.py video 0.5 0.5 data/video/shinjuku.mp4
 ```
+
+**Có thể đổi sang đuôi .avi xem thế nào**
+
 The detections will be saved as `detections.mp4` file.
 ![alt text](https://github.com/heartkilla/yolo-v3/blob/master/data/detection_examples/detections.gif)
 ### Webcam example
